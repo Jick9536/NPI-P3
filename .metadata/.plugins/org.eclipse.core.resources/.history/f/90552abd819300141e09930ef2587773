@@ -56,22 +56,19 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 						 Toast.makeText(this,"Hasta pronto", Toast.LENGTH_SHORT).show();
 						 super.finish();
 					 }
-					 else
-					 {
-						 if(cont%2==0 && cont!=0)
-						 {
-							 Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
-							 num1=quenumero(prediction.name);
-							 int valor=num1+num;
-							 Toast.makeText(this, num+" + "+num1+" = "+valor, Toast.LENGTH_SHORT).show();
-						 }
-						 else
-						 {
-							 Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
-							 num=quenumero(prediction.name);
-						 }
-						 cont++;
-					 }
+					if(cont%2==0 && cont!=0)
+					{
+						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						num1=quenumero(prediction.name);
+						int valor=num1+num;
+						Toast.makeText(this, num+" + "+num1+" = "+valor, Toast.LENGTH_SHORT).show();
+					}
+					else
+					{
+						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						num=quenumero(prediction.name);
+					}
+					cont++;
 				 }	 
 			 }
 			

@@ -2,9 +2,9 @@
 <resources>
 
     <string name="app_name">Gesto2</string>
-    <string name="info">Bienvenido al sample pinta números.
-        Pinta numeros del 0 al 9 y te dire cuál es. 
-        Cuando se hayan reconocido dos números se realizara su suma automáticamente.
-        Si pintas una espiral finalizará el sample</string>
+    <string name="info">Bienvenido al sample pinta números.<br></br>
+        Pinta numeros del 0 al 9 y te dire cuál es. <br></br>
+        Cuando se hayan reconocido dos números se realizara su suma automáticamente.<br></br>
+        Si pintas una espiral finalizará el sample<br></br></string>
 
 </resources>
