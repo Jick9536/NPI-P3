@@ -51,6 +51,11 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 			 {
 				 if (prediction.score > 3.0) 
 				 {
+					 if(prediction.name.equals("salida"))
+					 {
+						 Toast.makeText(this,"Hasta pronto", Toast.LENGTH_SHORT).show();
+						 super.finish();
+					 }
 					if(cont%2==0 && cont!=0)
 					{
 						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();

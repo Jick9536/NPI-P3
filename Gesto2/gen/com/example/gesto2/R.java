@@ -1804,7 +1804,7 @@ containing a value of this type.
          */
         public static final int abc_toolbar_collapse_description=0x7f0b0004;
         public static final int app_name=0x7f0b0010;
-        public static final int hello_world=0x7f0b0011;
+        public static final int info=0x7f0b0011;
     }
     public static final class style {
         /** 
