@@ -15,8 +15,10 @@ import android.widget.Toast;
 
 public class MainActivity2 extends Activity implements OnGesturePerformedListener 
 {
-
 	private GestureLibrary gestureLib;
+	private int num=0;
+	private int num1=0;
+	private int cont=1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -38,6 +40,8 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 		 setContentView(gestureOverlayView);
 	}
 	
+	
+	
 		 /* Métodos para tratamiento de gestos. */
 		 @Override
 		 public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture)
@@ -47,11 +51,58 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 			 {
 				 if (prediction.score > 3.0) 
 				 {
-					 Toast.makeText(this, prediction.name+" "+prediction.score, Toast.LENGTH_SHORT).show();
-				 }
-			}
+					if(cont%2==0 && cont!=0)
+					{
+						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						num1=quenumero(prediction.name);
+						int valor=num1+num;
+						Toast.makeText(this, num+" + "+num1+" = "+valor, Toast.LENGTH_SHORT).show();
+					}
+					else
+					{
+						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						num=quenumero(prediction.name);
+					}
+					cont++;
+				 }	 
+			 }
+			
 		 }
+		 
+		 public int quenumero(String numero)
+		 {
+			 int num=0;
+		        if(numero.equals("uno"))
+		        	num=1;
+		        
+		        if(numero.equals("dos"))
+		        	num=2;
+		        	
+		        if(numero.equals("tres"))
+		        	num=3;
+		        
+		        if(numero.equals("cuatro"))
+			        num=4;
+			       
+			    if(numero.equals("cinco"))
+			        num=5;
+			    
+			    if(numero.equals("seis"))
+			        num=6;
+			       
+			    if(numero.equals("siete"))
+			        num=7;
+			        
+			    if(numero.equals("ocho"))
+			        num=8;
+			       
+			    if(numero.equals("nueve"))
+			        num=9;
+		        	
+			    return num;
+			 }
 }
+
 	
 	 
 		 
