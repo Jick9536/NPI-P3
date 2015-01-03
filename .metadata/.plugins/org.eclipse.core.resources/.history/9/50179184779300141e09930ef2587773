@@ -1,0 +1,109 @@
+package com.example.gesto2;
+
+import java.util.ArrayList;
+import android.app.Activity;
+import android.gesture.Gesture;
+import android.gesture.GestureLibraries;
+import android.gesture.GestureLibrary;
+import android.gesture.GestureOverlayView;
+import android.gesture.GestureOverlayView.OnGesturePerformedListener;
+import android.gesture.Prediction;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+
+public class MainActivity2 extends Activity implements OnGesturePerformedListener 
+{
+	private GestureLibrary gestureLib;
+	private int num=0;
+	private int num1=0;
+	private int cont=1;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main_activity2);
+
+		 /*Detección de gestos (solo se abre al principio de la aplicación). */
+		 
+		 GestureOverlayView gestureOverlayView = new GestureOverlayView(this);
+		 View inflate = getLayoutInflater().inflate(R.layout.activity_main_activity2, null);
+		 gestureOverlayView.addView(inflate);
+		 gestureOverlayView.addOnGesturePerformedListener(this);
+		 gestureLib = GestureLibraries.fromRawResource(this, R.raw.gestures);
+
+		 if (!gestureLib.load()) 
+		 {
+		 finish();
+		 }
+		 setContentView(gestureOverlayView);
+	}
+	
+	
+	
+		 /* Métodos para tratamiento de gestos. */
+		 @Override
+		 public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture)
+		 {
+			 ArrayList<Prediction> predictions = gestureLib.recognize(gesture);
+			 for (Prediction prediction : predictions) 
+			 {
+				 if (prediction.score > 3.0) 
+				 {
+					 if(cont==1)
+					 {
+						 num=quenumero(prediction.name);
+						 Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						 cont++;
+					 }
+					if(cont==2)
+					{
+						num1=quenumero(prediction.name);
+						int valor=num1+num;
+						Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
+						Toast.makeText(this, num+" + "+num1+" = "+valor, Toast.LENGTH_SHORT).show();
+						cont=1;
+					}
+				 }	 
+			 }
+			
+		 }
+		 
+		 public int quenumero(String numero)
+		 {
+			 int num=1;
+		        if(numero=="uno")
+		        	num=1;
+		        
+		        if(numero=="dos")
+		        	num=2;
+		        	
+		        if(numero=="tres")
+		        	num=3;
+		        
+		        if(numero=="cuatro")
+			        num=4;
+			       
+			    if(numero=="cinco")
+			        num=5;
+			    
+			    if(numero=="seis")
+			        num=6;
+			       
+			    if(numero=="siete")
+			        num=7;
+			        
+			    if(numero=="ocho")
+			        num=8;
+			       
+			    if(numero=="nueve")
+			        num=9;
+		        	
+			    return num;
+			 }
+}
+
+	
+	 
+		 

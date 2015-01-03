@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gesto2</string>
+    <string name="info">Bienvenido al sample pinta números.</br> 
+        Pinta numeros del 0 al 9 y te dire cuál es. </br>
+        Cuando pintes dos numeros seguidos se realizara automátocamente su suma.</br> 
+        Si pintas una espiral finalizará el sample</string>
+
+</resources>
