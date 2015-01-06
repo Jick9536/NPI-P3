@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 public class MainActivity2 extends Activity implements OnGesturePerformedListener 
 {
+	private GestureLibrary gestureLib;
 	private int num=0;
 	private int num1=0;
 	private int cont=1;
-	private GestureLibrary gestureLib;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{

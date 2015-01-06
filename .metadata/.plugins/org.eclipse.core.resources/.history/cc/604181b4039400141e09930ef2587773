@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 public class MainActivity2 extends Activity implements OnGesturePerformedListener 
 {
+	private GestureLibrary gestureLib;
 	private int num=0;
 	private int num1=0;
 	private int cont=1;
-	private GestureLibrary gestureLib;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -44,12 +44,11 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 	
 		 /* Métodos para tratamiento de gestos. */
 		 @Override
-		public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture)
+		 public void onGesturePerformed(GestureOverlayView overlay, Gesture gesture)
 		 {
 			 ArrayList<Prediction> predictions = gestureLib.recognize(gesture);
 			 for (Prediction prediction : predictions) 
 			 {
-				 //Otra opción es directamente coger el primer elemento que supere la predicción de 1.0
 				 if (prediction.score > 3.0) 
 				 {
 					 if(prediction.name.equals("salida"))
