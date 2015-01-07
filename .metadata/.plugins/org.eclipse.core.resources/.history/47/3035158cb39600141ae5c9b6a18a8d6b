@@ -59,8 +59,8 @@ public class MainActivity2 extends Activity implements OnGesturePerformedListene
 					 }
 					 else
 					 {
-						 /* "cont" acumulador: la condición siguente se activa para cada vez que introduces dos número seguidos (modulo 2) y tiene que ser
-						  * distinto de cero para evitar que entre en la primera iteración*/
+						 /** "cont" acumulador: la condición siguente se activa para cada vez que introduces dos número seguidos (modulo 2) y tiene que ser
+						  * distinto de cero para evitar que entre en la primera iteración**/
 						 if(cont%2==0 && cont!=0)
 						 {
 							 Toast.makeText(this, prediction.name, Toast.LENGTH_SHORT).show();
